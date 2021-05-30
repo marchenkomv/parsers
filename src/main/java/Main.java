@@ -15,7 +15,7 @@ public class Main {
         fileHelper.writeFile(jsonFromXml, "data2.json");
 
         String json = fileHelper.readFile(jsonFile);
-        for (Employee employee : jsonParser.parseJson(json)) {
+        for (Employee employee : jsonParser.listFromJson(json)) {
             System.out.println(employee);
         }
     }
