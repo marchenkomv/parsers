@@ -1,9 +1,9 @@
 public class Employee {
-    public long id;
-    public String firstName;
-    public String lastName;
-    public String country;
-    public int age;
+    private long id;
+    private String firstName;
+    private String lastName;
+    private String country;
+    private int age;
 
     public Employee() { }
 
@@ -24,5 +24,25 @@ public class Employee {
                 ", country='" + country + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public int getAge() {
+        return age;
     }
 }

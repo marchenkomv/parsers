@@ -1,10 +1,7 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class FileHelper {
-     String readFile(String fileName) {
+    String readFile(String fileName) {
         StringBuilder sb = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String s;
@@ -17,11 +14,23 @@ public class FileHelper {
         return sb.toString();
     }
 
-    public void writeFile(String json, String fileName) {
+    public void writeFile(String text, String fileName) {
         try (FileWriter file = new FileWriter(fileName)) {
-            file.write(json);
+            file.write(text);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void createFile(String fileName) {
+        try {
+            new File(fileName).createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteFile(String fileName) {
+        new File(fileName).delete();
     }
 }
